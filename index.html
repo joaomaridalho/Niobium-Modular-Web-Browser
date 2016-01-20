@@ -1,17 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Electron boilerplate</title>
-		<link rel="stylesheet" href="index.css">
-	</head>
-	<body>
-		<div class="container">
-			<header>
-				<h1>Electron boilerplate</h1>
-			</header>
-			<section class="main"></section>
-			<footer></footer>
-		</div>
-	</body>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="public/css/app.css">
+    <script>
+        var nw = require("nw.gui");
+        var win = nw.Window.get();
+        win.isMaximized = false;
+
+    </script>
+
+</head>
+
+<body>
+    <div class="frame">
+        <img src="public/assets/retroceder.svg" class="snav">
+        <img src="public/assets/avancar.svg" class="snav">
+        <input type="text" value="www.google.pt" id="navbar" />
+        <ul>
+            <li>
+                <a href="#" title="Minimize" id="windowControlMinimize"></a>
+            </li>
+            <li>
+                <a href="#" title="Maximize" id="windowControlMaximize"></a>
+            </li>
+            <li>
+                <a href="#" title="Close" id="windowControlClose"></a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById('windowControlMinimize').onclick = function() {
+            win.minimize();
+        };
+
+        document.getElementById('windowControlClose').onclick = function() {
+            win.close();
+        };
+
+        document.getElementById('windowControlMaximize').onclick = function() {
+            if (win.isMaximized)
+                win.unmaximize();
+            else
+                win.maximize();
+        };
+
+        win.on('maximize', function() {
+            win.isMaximized = true;
+        });
+
+        win.on('unmaximize', function() {
+            win.isMaximized = false;
+        });
+
+    </script>
+</body>
+
 </html>
