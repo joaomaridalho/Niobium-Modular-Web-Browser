@@ -1,7 +1,8 @@
-# waterlion-modular-browser
+#WaterLion Browser
 
-> My impeccable app
+> Concept
 
+A modular web-browser
 
 ## Dev
 
