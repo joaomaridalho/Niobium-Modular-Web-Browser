@@ -1,5 +1,6 @@
 'use strict';
 const electron = require('electron');
+var $ = require('jquery');
 const app = electron.app;
 
 // report crashes to the Electron project

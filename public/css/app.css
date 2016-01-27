@@ -2,8 +2,8 @@ body {
     margin: 0px;
     padding: 0px;
     border: 0px;
+    height: 100%;
 }
-
 .frame {
     width: 100%;
     height: 38px;
@@ -12,10 +12,11 @@ body {
     -webkit-app-region: drag;
     -webkit-user-select: none;
 }
-
-
-/*Window Controls*/
-
+#workdiv {
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+}
 .snav {
     margin-top: 2px;
     vertical-align: middle;
@@ -23,37 +24,32 @@ body {
     -webkit-app-region: no-drag;
     margin-right: 0px;
 }
-
 .snav:hover,
 .snav:focus {
     -webkit-transform: scale(1.22, 1.22);
     outline: none;
 }
-
 #navbar {
     padding: 5px;
     margin-right: 0px;
     margin-left: 0px;
     margin-top: 4px;
+    -webkit-app-region: no-drag;
     width: calc(100% - 170px);
 }
-
 .frame>ul {
     float: right;
     text-align: right;
     line-height: 0;
     padding-left: 6px;
 }
-
 .frame>ul>li,
 .frame>ul>li>a {
     display: inline-block;
 }
-
 .frame>ul {
     float: right;
 }
-
 .frame>ul>li>a {
     width: 22px;
     height: 22px;
@@ -65,21 +61,27 @@ body {
     -webkit-transition: -webkit-transform 200ms;
     -webkit-app-region: no-drag;
 }
-
 .frame>ul>li>a:hover,
 .frame>ul>li>a:focus {
     -webkit-transform: scale(1.22, 1.22);
     outline: none;
 }
-
 a#windowControlClose {
     background-position: -42px 0;
 }
-
 a#windowControlMaximize {
     background-position: -20px 0;
 }
-
 a#windowControlMinimize {
     background-position: 0 0;
+}
+.vistativa {
+    width: 100%;
+    height: calc(100%-38px);
+    display: inline-block;
+    position: absolute;
+    top: 38px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
