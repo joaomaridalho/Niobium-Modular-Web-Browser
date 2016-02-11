@@ -6,11 +6,24 @@ body {
 }
 .frame {
     width: 100%;
-    height: 38px;
+    height: 65px;
     background: #5e5e60;
     border: none;
+    display: grid;
     -webkit-app-region: drag;
     -webkit-user-select: none;
+}
+.addsep {
+    float: right;
+    -webkit-transition: -webkit-transform 200ms;
+    -webkit-app-region: no-drag;
+    margin-right: 8px;
+    margin-top: 7px;
+}
+.addsep:hover,
+.addsep:focus {
+    -webkit-transform: scale(1.22, 1.22);
+    outline: none;
 }
 #workdiv {
     height: 100%;
@@ -18,11 +31,12 @@ body {
     background-color: aqua;
 }
 .snav {
-    margin-top: 2px;
+    float: left;
+    margin-left: 3px;
+    margin-top: -6px;
     vertical-align: middle;
     -webkit-transition: -webkit-transform 200ms;
     -webkit-app-region: no-drag;
-    margin-right: 0px;
 }
 .snav:hover,
 .snav:focus {
@@ -30,39 +44,37 @@ body {
     outline: none;
 }
 #navbar {
-    padding: 5px;
+    vertical-align: middle;
+    padding: 3px;
     margin-right: 0px;
     margin-left: 0px;
-    margin-top: 4px;
+    margin-top: -8px;
     -webkit-app-region: no-drag;
-    width: calc(100% - 170px);
+    width: calc(100% - 55px);
 }
-.frame>ul {
+#control {
     float: right;
     text-align: right;
     line-height: 0;
-    padding-left: 6px;
+    padding-left: 0px;
 }
-.frame>ul>li,
-.frame>ul>li>a {
+#control>li,
+#control>li>a {
     display: inline-block;
 }
-.frame>ul {
-    float: right;
-}
-.frame>ul>li>a {
+#control>li>a {
     width: 22px;
     height: 22px;
     background-image: url('../assets/WINDOW3.svg');
     background-repeat: no-repeat;
-    margin-right: 5px;
+    margin-right: 0px;
     margin-top: -10px;
     border: none;
     -webkit-transition: -webkit-transform 200ms;
     -webkit-app-region: no-drag;
 }
-.frame>ul>li>a:hover,
-.frame>ul>li>a:focus {
+#control>li>a:hover,
+#control>li>a:focus {
     -webkit-transform: scale(1.22, 1.22);
     outline: none;
 }
@@ -77,11 +89,53 @@ a#windowControlMinimize {
 }
 .vistativa {
     width: 100%;
-    height: calc(100%-38px);
+    height: -webkit-calc(100% - 65px);
     display: inline-block;
     position: absolute;
-    top: 38px;
+    top: 65px;
     bottom: 0;
     left: 0;
     right: 0;
+}
+#separadores {
+    float: left;
+    height: 30px;
+    height: 30px;
+    width: -webkit-calc(100% - 112px);
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 7px;
+    list-style-type: none;
+    padding: 0;
+    vertical-align: middle;
+}
+#separadores li {
+    float: left;
+    display: block;
+    position: relative;
+    background-color: #313139;
+    height: 28px;
+    border-left: 1px solid #9fadad;
+    right: 0.2em;
+    top: 6px;
+    padding: 0px 7px;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    vertical-align: middle;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 0px;
+    width: 47%;
+    text-align: center;
+    line-height: 2em;
+}
+#separadores .double-line {
+    line-height: 1.5em;
+}
+#separadores li:hover {
+    background-color: #238b68;
+}
+#separadores li.active {
+    background-color: #238b68;
 }
