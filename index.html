@@ -7,9 +7,7 @@
     <div class="frame">
         <div class="subframe" style="display:table;vertical-align:middle;width:100%;">
             <ul id="separadores">
-                <li>Google</li>
-                <li>Youtube</li>
-
+                <li class="tab ativa">Google</li>
             </ul>
 
             <ul id="control">
@@ -32,7 +30,9 @@
         </div>
 
     </div>
-    <webview src="http://google.pt" class="vistativa"></webview>
+    <div id="views">
+        <webview src="http://google.com" class="vista ativa"></webview>
+    </div>
 
     <script src="public/js/app.js"></script>
     <script src="public/js/browser.js"></script>
