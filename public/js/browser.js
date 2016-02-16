@@ -6,14 +6,15 @@ $('#navbar').keyup(function (e) {
             url = "http://" + url;
         }
         $('.vista.ativa').attr('src', url);
-        $('.tab.ativa').text(url);
+        $('.tab.ativa').html(url + "<a>X</a>");
     }
 });
 $(".addsep").click(function () {
     $(".tab,.ativa").removeClass("ativa");
     $(".vista,.ativa").removeClass("ativa");
-    $("#separadores").append("<li class='tab ativa'>Youtube</li>");
+    $("#separadores").append("<li class='tab ativa'>Youtube<a>X</a></li>");
     $("#views").append("<webview class='vista ativa' src=" + "http://youtube.com" + "></webview>");
+
     var n = $("#separadores .tab").length;
     var w = (100 / n) - 3;
     $(".tab").width(w + '%');
@@ -26,4 +27,12 @@ $("body").on("click", ".tab", function () {
     $(".vista").eq(index).addClass("ativa");
 
 
+});
+$("body").on("click", ".tab a", function () {
+    var index = $(this).parent().prevAll().length;
+    $(".tab").eq(index).remove();
+    $(".vista").eq(index).remove();
+    var n = $("#separadores .tab").length;
+    var w = (100 / n) - 3;
+    $(".tab").width(w + '%');
 });
