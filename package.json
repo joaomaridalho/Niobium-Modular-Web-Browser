@@ -1,8 +1,8 @@
 {
-    "name": "waterlion-modular-browser",
-    "productName": "WaterlionModularBrowser",
-    "version": "0.0.0",
-    "description": "My impeccable app",
+    "name": "Niobium-Modular-Web-Browser",
+    "productName": "Niobium Web Browsser",
+    "version": "0.1.2",
+    "description": "A modular web browser that adapts to you",
     "license": "MIT",
     "repository": "joaomaridalho/waterlion-modular-browser",
     "author": {
