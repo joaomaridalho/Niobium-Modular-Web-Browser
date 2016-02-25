@@ -4,6 +4,7 @@ body {
     border: 0px;
     height: 100%;
 }
+
 .frame {
     width: 100%;
     height: 65px;
@@ -13,6 +14,7 @@ body {
     -webkit-app-region: drag;
     -webkit-user-select: none;
 }
+
 .addsep {
     float: right;
     -webkit-transition: -webkit-transform 200ms;
@@ -20,16 +22,19 @@ body {
     margin-right: 8px;
     margin-top: 7px;
 }
+
 .addsep:hover,
 .addsep:focus {
     -webkit-transform: scale(1.22, 1.22);
     outline: none;
 }
+
 #workdiv {
     height: 100%;
     width: 100%;
     background-color: aqua;
 }
+
 .snav {
     float: left;
     margin-left: 3px;
@@ -38,11 +43,13 @@ body {
     -webkit-transition: -webkit-transform 200ms;
     -webkit-app-region: no-drag;
 }
+
 .snav:hover,
 .snav:focus {
     -webkit-transform: scale(1.22, 1.22);
     outline: none;
 }
+
 #navbar {
     vertical-align: middle;
     padding: 3px;
@@ -52,16 +59,19 @@ body {
     -webkit-app-region: no-drag;
     width: calc(100% - 55px);
 }
+
 #control {
     float: right;
     text-align: right;
     line-height: 0;
     padding-left: 0px;
 }
+
 #control>li,
 #control>li>a {
     display: inline-block;
 }
+
 #control>li>a {
     width: 22px;
     height: 22px;
@@ -69,24 +79,30 @@ body {
     background-repeat: no-repeat;
     margin-right: 0px;
     margin-top: -10px;
+    position: static;
     border: none;
     -webkit-transition: -webkit-transform 200ms;
     -webkit-app-region: no-drag;
 }
+
 #control>li>a:hover,
 #control>li>a:focus {
     -webkit-transform: scale(1.22, 1.22);
     outline: none;
 }
+
 a#windowControlClose {
     background-position: -42px 0;
 }
+
 a#windowControlMaximize {
     background-position: -20px 0;
 }
+
 a#windowControlMinimize {
     background-position: 0 0;
 }
+
 .vista.ativa {
     width: 100%;
     height: -webkit-calc(100% - 65px);
@@ -97,9 +113,11 @@ a#windowControlMinimize {
     left: 0;
     right: 0;
 }
+
 .vista {
     display: none;
 }
+
 #separadores {
     -webkit-app-region: drag;
     -webkit-user-select: none;
@@ -116,6 +134,7 @@ a#windowControlMinimize {
     vertical-align: middle;
     z-index: 999;
 }
+
 #separadores .tab.ativa {
     -webkit-app-region: no-drag;
     -webkit-user-select: none;
@@ -137,6 +156,7 @@ a#windowControlMinimize {
     text-align: center;
     line-height: 2em;
 }
+
 #separadores .tab {
     -webkit-app-region: no-drag;
     -webkit-user-select: none;
@@ -160,22 +180,45 @@ a#windowControlMinimize {
     text-align: center;
     line-height: 2em;
 }
+
+#separadores .tab .out {
+    display: inline-block;
+    width: -webkit-calc(100% - 50px);
+    overflow: hidden;
+    height: 28px;
+}
+
 #separadores .tab a {
     float: right;
+    display: block;
+    position: relative;
+    z-index: 88;
     padding: 0px 5px;
-    height: 100%;
+    height: 28px;
 }
+
+.timg {
+    height: 17px;
+    width: 17px;
+    float: left;
+    margin-left: 6px;
+    margin-top: 6px;
+}
+
 #separadores .tab a:hover {
     float: right;
     height: 100%;
     background-color: crimson;
 }
+
 #separadores .double-line {
     line-height: 1.5em;
 }
+
 #separadores li:hover {
     background-color: #238b68;
 }
+
 #separadores li.active {
     background-color: #238b68;
 }
