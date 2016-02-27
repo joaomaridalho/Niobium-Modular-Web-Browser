@@ -21,7 +21,7 @@ $(".addsep").click(function () {
     var w = (100 / n) - 3;
     $(".tab").width(w + '%');
     $("#at.vista.ativa").bind("dom-ready", title);
-    $("#at.vista.ativa").bind("new-window", novo);
+    document.getElementById("at").addEventListener("new-window", novo);
 });
 $("body").on("click", ".tab", function () {
     $(".tab,.ativa").removeClass("ativa");
