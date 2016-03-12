@@ -1,4 +1,6 @@
 var $ = require('jquery');
+var remote = require('remote');
+var BrowserWindow = remote.require('browser-window');
 $('#navbar').keyup(function (e) {
     if (e.keyCode == 13) {
         var url = $("#navbar").val();
@@ -9,7 +11,6 @@ $('#navbar').keyup(function (e) {
         $('.tab.ativa').html("<a>X</a>");
     }
 });
-
 $(".addsep").click(function () {
     $(".tab,.ativa").removeClass("ativa");
     $(".vista,.ativa").removeClass("ativa");
@@ -29,8 +30,10 @@ $("body").on("click", ".tab", function () {
     $(".vista,.ativa").removeClass("ativa");
     $(".tab").eq(index).addClass("ativa");
     $(".vista").eq(index).addClass("ativa");
-
-
+    $(".vista,.ativa").dispatchEvent("resize");
+});
+$("#ret").click(function () {
+    document.getElementById("at").goBack();
 });
 $("body").on("click", ".tab a", function () {
     var index = $(this).parent().prevAll().length;
@@ -45,6 +48,7 @@ var title = function () {
     var pag = document.getElementById("at").getTitle();
     var url = document.getElementById("at").getURL();
     var o = $("#at").index();
+    $("#navbar").val(url);
     $('.tab').eq(o).html("<img class='timg' src = 'https://plus.google.com/_/favicon?domain_url=" + url + "'>" + "<div class=out>" + pag + "</div>" + "<a>X</a>");
 };
 var novo = function (e) {
