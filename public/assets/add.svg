@@ -28,7 +28,6 @@
          id="stop6737" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient4156"
        osb:paint="gradient">
       <stop
@@ -60,15 +59,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="31.678384"
-     inkscape:cx="12.934849"
-     inkscape:cy="10.669852"
+     inkscape:zoom="22.4"
+     inkscape:cx="13.496712"
+     inkscape:cy="12.933637"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     inkscape:window-width="1280"
-     inkscape:window-height="962"
+     inkscape:window-width="1024"
+     inkscape:window-height="705"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -80,7 +79,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -90,14 +89,14 @@
      id="layer1"
      transform="translate(0,-1030.3622)">
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#10a6df;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 10.953841,1032.317 0.03157,18.088"
        id="path4144"
        inkscape:path-effect="#path-effect4146"
        inkscape:original-d="m 10.953841,1032.317 0.03157,18.088"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:#10a6df;fill-rule:evenodd;stroke:#10a6df;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
        d="m 2.0203041,1041.3452 17.9617749,0"
        id="path4152"
        inkscape:path-effect="#path-effect4154"

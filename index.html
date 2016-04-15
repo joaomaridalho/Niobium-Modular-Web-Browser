@@ -5,7 +5,7 @@
 
 <body>
     <div class="frame">
-        <div class="subframe" style="display:table;vertical-align:middle;width:100%;">
+        <div class="subframe" style="display:table;vertical-align:middle;width:100%;height:auto">
             <ul id="separadores">
                 <li class="tab ativa"><a>X</a></li>
             </ul>
@@ -23,10 +23,15 @@
             </ul>
             <img src="public/assets/add.svg" class="addsep">
         </div>
-        <div class="subframe" style="display:table;vertical-align:middle;width:100%;height:auto">
+        <div class="subframe" style="display:table;vertical-align:middle;width:100%;padding-top:8px;margin-top:4px;" id="low">
             <img src="public/assets/retroceder.svg" class="snav" id="ret">
             <img src="public/assets/avancar.svg" class="snav" id="ava">
             <input type="text" value="www.google.pt" id="navbar">
+            <a class="hamburguer" href="#">
+                <span></span>
+                <label for="change-hamburguer"></label>
+            </a>
+
         </div>
 
     </div>
@@ -36,7 +41,5 @@
 
     <script src="public/js/app.js"></script>
     <script src="public/js/browser.js"></script>
-
-
-
+    <script src="public/js/menu.js"></script>
 </body>

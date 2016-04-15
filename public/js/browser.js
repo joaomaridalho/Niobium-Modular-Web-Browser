@@ -1,6 +1,14 @@
 var $ = require('jquery');
 var remote = require('remote');
 var BrowserWindow = remote.require('browser-window');
+/*function updateWebviews() {
+    var webview = document.querySelector("webview");
+    webview.style.height = document.documentElement.clientHeight + "px";
+    webview.style.width = document.documentElement.clientWidth + "px";
+};
+
+onload = updateWebviews;
+window.onresize = updateWebviews;*/
 $('#navbar').keyup(function (e) {
     if (e.keyCode == 13) {
         var url = $("#navbar").val();
@@ -12,12 +20,11 @@ $('#navbar').keyup(function (e) {
     }
 });
 $(".addsep").click(function () {
-    $(".tab,.ativa").removeClass("ativa");
-    $(".vista,.ativa").removeClass("ativa");
+    $(".tab.ativa").removeClass("ativa");
+    $(".vista.ativa").removeClass("ativa");
     $("#separadores").append("<li class='tab ativa'><a>X</a></li>");
-    $("#views").append("<webview class='vista ativa' src=" + "http://google.com" + "></webview>");
     $("#at").removeAttr("id");
-    $(".vista.ativa").attr("id", "at");
+    $("#views").append("<webview id='at' class='vista ativa' src=" + "http://google.com" + "></webview>");
     var n = $("#separadores .tab").length;
     var w = (100 / n) - 3;
     $(".tab").width(w + '%');
@@ -25,12 +32,15 @@ $(".addsep").click(function () {
     document.getElementById("at").addEventListener("new-window", novo);
 });
 $("body").on("click", ".tab", function () {
-    $(".tab,.ativa").removeClass("ativa");
+    $(".tab.ativa").removeClass("ativa");
     var index = $(this).index();
     $(".vista,.ativa").removeClass("ativa");
+    $(".vista").eq(index).css("height", $("views").css("height"));
+    $(".vista").eq(index).css("width", $("views").css("width"));
     $(".tab").eq(index).addClass("ativa");
     $(".vista").eq(index).addClass("ativa");
-    $(".vista,.ativa").dispatchEvent("resize");
+    $("#at").removeAttr("id");
+    $(".vista.ativa").attr("id", "at");
 });
 $("#ret").click(function () {
     document.getElementById("at").goBack();

@@ -10,7 +10,7 @@ body {
     height: 65px;
     background: #414141;
     border: none;
-    display: grid;
+    display: inline-block;
     -webkit-app-region: drag;
     -webkit-user-select: none;
 }
@@ -24,8 +24,10 @@ body {
 }
 
 #views {
-    height: -webkit-calc(100%-65px);
+    height: -webkit-calc(100% - 65px);
     width: 100%;
+    position: relative;
+    display: block;
 }
 
 .addsep:hover,
@@ -47,6 +49,8 @@ body {
     vertical-align: middle;
     -webkit-transition: -webkit-transform 200ms;
     -webkit-app-region: no-drag;
+    height: 22px;
+    width: 22px;
 }
 
 .snav:hover,
@@ -65,7 +69,7 @@ body {
     margin-top: -10px;
     margin-bottom: 2px;
     -webkit-app-region: no-drag;
-    width: calc(100% - 55px);
+    width: calc(100% - 90px);
     -webkit-transition: background-color 3s;
     background-color: transparent;
 }
@@ -79,6 +83,7 @@ body {
     float: right;
     text-align: right;
     line-height: 0;
+    margin-bottom: 0px;
     padding-left: 0px;
 }
 
@@ -119,18 +124,17 @@ a#windowControlMinimize {
 }
 
 .vista.ativa {
+    display: block;
+    visibility: visible;
     width: 100%;
-    height: auto;
-    display: inline-block;
-    position: absolute;
-    top: 65px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    height: 100%;
 }
 
 .vista {
-    display: none;
+    display: block;
+    visibility: hidden;
+    width: 0;
+    height: 0;
 }
 
 #separadores {
@@ -236,4 +240,61 @@ a#windowControlMinimize {
 
 #separadores li.active {
     background-color: #238b68;
+}
+
+.hamburguer {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    background: none;
+    margin: 0 0 10px 0;
+    float: right;
+    right: 10px;
+    bottom: 2px;
+}
+
+.hamburguer:after,
+.hamburguer:before,
+.hamburguer span,
+.hamburguer label {
+    content: ' ';
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: white;
+    left: 0;
+    position: absolute;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    -webkit-app-region: no-drag;
+}
+
+.hamburguer:before {
+    top: 0;
+}
+
+.hamburguer:after {
+    bottom: 0;
+}
+
+.hamburguer:focus {
+    outline: none;
+}
+
+.hamburguer label {
+    width: 100%;
+    height: 100%;
+    background: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburguer span {
+    top: 8px;
+}
+
+#low {
+    background-color: #313139;
 }
