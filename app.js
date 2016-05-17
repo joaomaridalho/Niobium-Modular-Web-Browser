@@ -1,7 +1,8 @@
-var express = require('express'),
-  path = require('path'),
-  cookieParser = require('cookie-parser'),
-  bodyParser = require('body-parser');
+var express = require('express')
+    , path = require('path')
+    , cookieParser = require('cookie-parser')
+    , bodyParser = require('body-parser');
+var windowManager = require('electron-window-manager');
 
 var routes = require('./routes');
 
@@ -12,7 +13,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -20,8 +23,8 @@ app.get('/', routes.index);
 
 app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function() {
-	// log a message to console!
+var server = app.listen(app.get('port'), function () {
+    // log a message to console!
 });
 
 module.exports = app;

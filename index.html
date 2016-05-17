@@ -1,15 +1,16 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/app.css">
+    <meta charset="utf-8" />
 </head>
-
 
 <body>
     <div class="frame">
         <div class="subframe" style="display:table;vertical-align:middle;width:100%;height:auto">
-            <ul id="separadores">
-                <li class="tab ativa"><a>X</a></li>
-            </ul>
-
+            <div id="scr">
+                <ul id="separadores">
+                    <li class="tab ativa"><a>X</a></li>
+                </ul>
+            </div>
             <ul id="control">
                 <li>
                     <a href="#" title="Minimize" id="windowControlMinimize"></a>
@@ -23,10 +24,10 @@
             </ul>
             <img src="public/assets/add.svg" class="addsep">
         </div>
-        <div class="subframe" style="display:table;vertical-align:middle;width:100%;padding-top:8px;margin-top:4px;" id="low">
+        <div class="subframe" style="display:table;vertical-align:middle;width:100%;padding-top:10px;margin-top:2px;" id="low">
             <img src="public/assets/retroceder.svg" class="snav" id="ret">
             <img src="public/assets/avancar.svg" class="snav" id="ava">
-            <input type="text" value="www.google.pt" id="navbar">
+            <input type="text" value="www.google.pt" id="navbar" onclick="this.select();">
             <a class="hamburguer" href="#">
                 <span></span>
                 <label for="change-hamburguer"></label>
@@ -35,9 +36,21 @@
         </div>
 
     </div>
+
+    <div id=menu>
+        <ul>
+            <li id="tr">Transferências</li>
+            <li id="fav">Favoritos</li>
+            <li id="his">Histórico</li>
+            <li id="def">Definições</li>
+        </ul>
+
+    </div>
     <div id="views">
         <webview src="http://google.com" class="vista ativa" id="at"></webview>
     </div>
+
+
 
     <script src="public/js/app.js"></script>
     <script src="public/js/browser.js"></script>
