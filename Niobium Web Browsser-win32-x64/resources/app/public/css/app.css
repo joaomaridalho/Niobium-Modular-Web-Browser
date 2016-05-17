@@ -1,0 +1,353 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    height: 100%;
+}
+
+.frame {
+    width: 100%;
+    height: 65px;
+    background: #414141;
+    border: none;
+    display: inline-block;
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+}
+
+.addsep {
+    float: right;
+    -webkit-transition: -webkit-transform 200ms;
+    -webkit-app-region: no-drag;
+    margin-right: 8px;
+    margin-top: 7px;
+}
+
+#views {
+    height: -webkit-calc(100% - 65px);
+    width: 100%;
+    margin: 0px;
+    position: relative;
+}
+
+.addsep:hover,
+.addsep:focus {
+    -webkit-transform: scale(1.22, 1.22);
+    outline: none;
+}
+
+#workdiv {
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+}
+
+.snav {
+    float: left;
+    margin-left: 3px;
+    margin-top: -2px;
+    vertical-align: middle;
+    -webkit-transition: -webkit-transform 200ms;
+    -webkit-app-region: no-drag;
+    height: 22px;
+    width: 22px;
+}
+
+.snav:hover,
+.snav:focus {
+    -webkit-transform: scale(1.22, 1.22);
+    outline: none;
+}
+
+#navbar {
+    vertical-align: middle;
+    padding: 8px;
+    border: 0px;
+    color: white;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: -5px;
+    margin-bottom: 2px;
+    -webkit-app-region: no-drag;
+    width: calc(100% - 90px);
+    -webkit-transition: background-color 3s;
+    background-color: transparent;
+}
+
+#navbar:focus {
+    outline: none;
+    background-color: #767676;
+}
+
+#control {
+    float: right;
+    text-align: right;
+    line-height: 0;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+#control>li,
+#control>li>a {
+    display: inline-block;
+}
+
+#control>li>a {
+    width: 22px;
+    height: 22px;
+    background-image: url('../assets/WINDOW3.svg');
+    background-repeat: no-repeat;
+    margin-right: 0px;
+    margin-top: -10px;
+    position: static;
+    border: none;
+    -webkit-transition: -webkit-transform 200ms;
+    -webkit-app-region: no-drag;
+}
+
+#control>li>a:hover,
+#control>li>a:focus {
+    -webkit-transform: scale(1.22, 1.22);
+    outline: none;
+}
+
+a#windowControlClose {
+    background-position: -42px 0;
+}
+
+a#windowControlMaximize {
+    background-position: -20px 0;
+}
+
+a#windowControlMinimize {
+    background-position: 0 0;
+}
+
+.vista.ativa {
+    display: inline-block;
+    visibility: visible;
+    -webkit-backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    margin-right: -190px;
+}
+
+.vista {
+    display: block;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+#separadores {
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    float: left;
+    height: 28px;
+    width: -webkit-calc(100% - 112px);
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 7px;
+    list-style-type: none;
+    padding: 0;
+    vertical-align: middle;
+    z-index: 999;
+}
+
+#separadores .tab.ativa {
+    -webkit-app-region: no-drag;
+    -webkit-user-select: none;
+    float: left;
+    display: inline-block;
+    position: relative;
+    background-color: #313139;
+    height: 28px;
+    border-left: 1px solid #9fadad;
+    right: 0.2em;
+    top: 6px;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    vertical-align: middle;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 0px;
+    width: 97%;
+    text-align: center;
+    line-height: 2em;
+}
+
+#separadores .tab {
+    -webkit-app-region: no-drag;
+    -webkit-user-select: none;
+    font-family: verdana, verdana;
+    font-size: 15;
+    float: left;
+    display: inline-block;
+    position: relative;
+    background-color: #5e5e60;
+    height: 25px;
+    border-left: 1px solid #9fadad;
+    right: 0.2em;
+    top: 6px;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    vertical-align: middle;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 0px;
+    width: 97%;
+    text-align: center;
+    line-height: 2em;
+}
+
+#separadores .tab .out {
+    display: inline-block;
+    width: -webkit-calc(100% - 50px);
+    overflow: hidden;
+    height: 28px;
+}
+
+#separadores .tab a {
+    float: right;
+    display: block;
+    position: relative;
+    z-index: 88;
+    padding: 0px 5px;
+    height: 28px;
+}
+
+.timg {
+    height: 17px;
+    width: 17px;
+    float: left;
+    margin-left: 6px;
+    margin-top: 6px;
+}
+
+#separadores .tab a:hover {
+    float: right;
+    height: 100%;
+    background-color: crimson;
+}
+
+#separadores .double-line {
+    line-height: 1.5em;
+}
+
+#separadores li:hover {
+    background-color: #3a92de;
+}
+
+#separadores li.active {
+    background-color: #238b68;
+}
+
+.hamburguer {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    background: none;
+    margin: 0 0 3px 0;
+    float: right;
+    right: 10px;
+    bottom: 2px;
+}
+
+.hamburguer:after,
+.hamburguer:before,
+.hamburguer span,
+.hamburguer label {
+    content: ' ';
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: white;
+    left: 0;
+    position: absolute;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    -webkit-app-region: no-drag;
+}
+
+.hamburguer:before {
+    top: 0;
+}
+
+.hamburguer:after {
+    bottom: 0;
+}
+
+.hamburguer:focus {
+    outline: none;
+}
+
+.hamburguer label {
+    width: 100%;
+    height: 100%;
+    background: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburguer span {
+    top: 8px;
+}
+
+#low {
+    background-color: #313139;
+}
+
+#menu {
+    display: none;
+    height: -webkit-calc(100% - 65px);
+    width: 200px;
+    margin: 0px;
+    background-color: #5e5e60;
+    float: right;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0;
+    width: 100%;
+}
+
+#menu li {
+    font-family: verdana, verdana;
+    display: block;
+    color: #ffffff;
+    padding: 24% 0 24% 30px;
+    text-decoration: none;
+}
+
+#menu li:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
