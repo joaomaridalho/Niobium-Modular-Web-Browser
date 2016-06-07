@@ -41,14 +41,17 @@ $(".addsep").click(function() {
 //definições
 $("#def").click(function() {
     let win = new BrowserWindow({
-        width: 800,
-        height: 600
+        width: 500,
+        height: 600,
+        resizable:false,
+
     });
     win.on('closed', () => {
         win = null;
     });
    win.loadURL(`file://${__dirname}/views/set.html`);
     win.show();
+    win.setMenu(null);
 });
 $("body").on("click", ".tab", function() {
     console.log("tab");
