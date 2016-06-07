@@ -1,10 +1,11 @@
+'use strict';
 var $ = require('jquery');
 var remote = require('remote');
 var BrowserWindow = remote.require('browser-window');
 var cont = 1;
 var cont = 1;
 var ind;
-var len = function () {
+var len = function() {
     if ($(".tab").length <= 4) {
         var n = $("#separadores .tab").length;
         var w = (100 / n);
@@ -14,7 +15,7 @@ var len = function () {
         $(".tab").width(w + '%');
     }
 };
-$('#navbar').keyup(function (e) {
+$('#navbar').keyup(function(e) {
     if (e.keyCode == 13) {
         var url = $("#navbar").val();
         if (!url.indexOf("title") != -1) {
@@ -26,7 +27,7 @@ $('#navbar').keyup(function (e) {
         $('.tab.ativa').html("<a>X</a>");
     }
 });
-$(".addsep").click(function () {
+$(".addsep").click(function() {
     $(".tab.ativa").removeClass("ativa");
     $(".vista.ativa").removeClass("ativa");
     $("#separadores").append("<li class='tab ativa'><a>X</a></li>");
@@ -37,7 +38,19 @@ $(".addsep").click(function () {
     document.getElementById("at").addEventListener("new-window", novo);
     len();
 });
-$("body").on("click", ".tab", function () {
+//definições
+$("#def").click(function() {
+    let win = new BrowserWindow({
+        width: 800,
+        height: 600
+    });
+    win.on('closed', () => {
+        win = null;
+    });
+   win.loadURL(`file://${__dirname}/views/set.html`);
+    win.show();
+});
+$("body").on("click", ".tab", function() {
     console.log("tab");
     $(".tab.ativa").removeClass("ativa");
     var index = $(this).index();
@@ -53,16 +66,16 @@ $("body").on("click", ".tab", function () {
     $("#navbar").val(url);
     title();
 });
-$("#ret").click(function () {
+$("#ret").click(function() {
     document.getElementById("at").goBack();
 });
-$("body").on("click", ".tab a", function () {
+$("body").on("click", ".tab a", function() {
     var index = $(this).parent().prevAll().length;
     $(".tab").eq(index).remove();
     $(".vista").eq(index).remove();
     len();
 });
-var title = function () {
+var title = function() {
     console.log("document Ready");
     var pag = document.getElementById("at").getTitle();
     var url = document.getElementById("at").getURL();
@@ -70,7 +83,7 @@ var title = function () {
     $("#navbar").val(url);
     $('.tab').eq(indr).html("<img class='timg' src = 'https://plus.google.com/_/favicon?domain_url=" + url + "'>" + "<div class=out>" + pag + "</div>" + "<a>X</a>");
 };
-var novo = function (e) {
+var novo = function(e) {
     $(".addsep").trigger("click");
     $('.vista.ativa').attr('src', e.url);
 };

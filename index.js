@@ -2,7 +2,6 @@
 var electron = require('electron');
 var $ = require('jquery');
 var app = electron.app;
-var windowManager = require('electron-window-manager');
 // report crashes to the Electron project
 require('crash-reporter').start();
 
