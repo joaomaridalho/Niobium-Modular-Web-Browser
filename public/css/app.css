@@ -319,13 +319,18 @@ a#windowControlMinimize {
     color: #ffffff;
     padding: 24% 0 24% 30px;
     text-decoration: none;
+    text-shadow: 1px 1px #000;
+
 }
 
 #menu li:hover {
     background-color: #ffffff;
     color: black;
+    text-shadow: 2px 2px #fff;
 }
-
+#menu li.text:hover {
+    scale:(1.22,1.22)
+}
 
 /*Scrollbar*/
 

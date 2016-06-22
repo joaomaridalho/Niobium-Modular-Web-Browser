@@ -43,13 +43,13 @@ $("#def").click(function() {
     let win = new BrowserWindow({
         width: 500,
         height: 600,
-        resizable:false,
+        resizable: false,
 
     });
     win.on('closed', () => {
         win = null;
     });
-   win.loadURL(`file://${__dirname}/views/set.html`);
+    win.loadURL(`file://${__dirname}/views/set.html`);
     win.show();
     win.setMenu(null);
 });
