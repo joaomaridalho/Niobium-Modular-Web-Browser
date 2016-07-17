@@ -10,7 +10,7 @@
     "email": "",
     "url": "github.com"
   },
-  "electronVersion": "0.36.0",
+  "electronVersion": "1.2.5",
   "scripts": {
     "test": "xo",
     "start": "electron .",
@@ -26,15 +26,17 @@
     "electron"
   ],
   "dependencies": {
-    "electron-debug": "^0.5.0",
-    "electron-dl": "^1.2.0",
+    "alasql": "^0.2.7",
+    "electron": "^0.4.1",
+    "electron-debug": "^1.0.1",
     "electron-json-storage": "^2.0.0",
-    "jquery": "^2.2.3"
+    "jquery": "^3.0.0",
+    "nedb": "^1.8.0"
   },
   "devDependencies": {
-    "electron-packager": "^5.0.0",
-    "electron-prebuilt": "^0.36.0",
-    "xo": "^0.12.0"
+    "electron-packager": "^7.0.4",
+    "electron-prebuilt": "^1.2.5",
+    "xo": "^0.16.0"
   },
   "xo": {
     "esnext": true,

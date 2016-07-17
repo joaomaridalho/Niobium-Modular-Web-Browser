@@ -1,20 +1,9 @@
 'use strict';
 var $ = require('jquery');
-var remote = require('remote');
-var BrowserWindow = remote.require('browser-window');
-var cont = 1;
-var cont = 1;
+const {
+    BrowserWindow
+} = require('electron').remote;
 var ind;
-var len = function() {
-    if ($(".tab").length <= 4) {
-        var n = $("#separadores .tab").length;
-        var w = (100 / n);
-        $(".tab").width(w + '%');
-    } else {
-        var w = (100 / 4);
-        $(".tab").width(w + '%');
-    }
-};
 $('#navbar').keyup(function(e) {
     if (e.keyCode == 13) {
         var url = $("#navbar").val();
@@ -30,14 +19,20 @@ $('#navbar').keyup(function(e) {
 $(".addsep").click(function() {
     $(".tab.ativa").removeClass("ativa");
     $(".vista.ativa").removeClass("ativa");
-    $("#separadores").append("<li class='tab ativa'><a>X</a></li>");
     $("#at").removeAttr("id");
+    $("#separadores").append("<li class='tab ativa'><a>X</a></li>");
     $("#views").append("<webview id='at' class='vista ativa' src=" + "http://google.com" + "></webview>");
-    ind = $("#at").index();
-    $("#at.vista.ativa").bind("dom-ready", title);
-    document.getElementById("at").addEventListener("new-window", novo);
-    len();
-});
+    ind = $(".vista.ativa").index();
+    console.log(ind);
+    $("#at.vista.ativa").bind("dom-ready",{k:ind} ,function(event) {
+        console.log("document Ready");
+        var pag = document.getElementById("at").getTitle();
+        var url = document.getElementById("at").getURL();
+        $("#navbar").val(url);
+        console.log(event.data.k);
+        $('.tab').eq(event.data.k).html("<img class='timg' src = 'https://plus.google.com/_/favicon?domain_url=" + url + "'>" + "<div class=out>" + pag + "</div>" + "<a>X</a>");
+    });
+    document.getElementById("at").addEventListener("new-window", novo);});
 //definições
 $("#def").click(function() {
     let win = new BrowserWindow({
@@ -53,6 +48,7 @@ $("#def").click(function() {
     win.show();
     win.setMenu(null);
 });
+
 $("body").on("click", ".tab", function() {
     console.log("tab");
     $(".tab.ativa").removeClass("ativa");
@@ -76,13 +72,20 @@ $("body").on("click", ".tab a", function() {
     var index = $(this).parent().prevAll().length;
     $(".tab").eq(index).remove();
     $(".vista").eq(index).remove();
-    len();
 });
+var load = function() {
+    console.log("document Ready");
+    var pag = document.getElementById("at").getTitle();
+    var url = document.getElementById("at").getURL();
+    $("#navbar").val(url);
+    console.log(event.data.inde);
+    $('.tab').eq(event.data.inde).html("<img class='timg' src = 'https://plus.google.com/_/favicon?domain_url=" + url + "'>" + "<div class=out>" + pag + "</div>" + "<a>X</a>");
+};
 var title = function() {
     console.log("document Ready");
     var pag = document.getElementById("at").getTitle();
     var url = document.getElementById("at").getURL();
-    var indr = $(".tab .ativa").index();
+    var indr = $(".tab.ativa").index();
     $("#navbar").val(url);
     $('.tab').eq(indr).html("<img class='timg' src = 'https://plus.google.com/_/favicon?domain_url=" + url + "'>" + "<div class=out>" + pag + "</div>" + "<a>X</a>");
 };

@@ -2,15 +2,16 @@
     <link rel="stylesheet" type="text/css" href="public/css/app.css">
     <meta charset="utf-8" />
 </head>
+<script>
+    var $ = require("jquery");
+</script>
 
 <body>
     <div class="frame">
         <div class="subframe" style="display:table;vertical-align:middle;width:100%;height:auto">
-            <div id="scr">
-                <ul id="separadores">
-                    <li class="tab ativa"><a>X</a></li>
-                </ul>
-            </div>
+            <ul id="separadores">
+                <li class="tab ativa"><a>X</a></li>
+            </ul>
             <ul id="control">
                 <li>
                     <a href="#" title="Minimize" id="windowControlMinimize"></a>
@@ -37,22 +38,26 @@
 
     </div>
 
-    <div id=menu>
+    <div class=menu id=men>
         <ul>
             <li id="tr">Transferências</li>
             <li id="fav">Favoritos</li>
             <li id="his">Histórico</li>
             <li id="def">Definições</li>
         </ul>
-
+    </div>
+    <div class="menu" style="display:none" id="tran">
+        <div id=trtitulo>
+            Transferências
+        </div>
+        <div id=tra></div>
     </div>
     <div id="views">
         <webview src="http://google.com" class="vista ativa" id="at"></webview>
     </div>
 
-
-
     <script src="public/js/app.js"></script>
     <script src="public/js/browser.js"></script>
+    <script src="public/js/transferencias.js"></script>
     <script src="public/js/menu.js"></script>
 </body>
