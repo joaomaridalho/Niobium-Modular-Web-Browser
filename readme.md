@@ -1,4 +1,6 @@
-#Niobium Web Browser
+
+ ## Niobium Modular Web Browser
+ # This Project is no longer mantained and as several security flaws.
 
 > Concept
 
@@ -10,13 +12,13 @@ A modular web-browser
 $ npm install
 ```
 
-### Run
+## Run
 
 ```
 $ npm start
 ```
 
-### Build
+## Build
 
 ```
 $ npm run build
@@ -28,3 +30,4 @@ Builds the app for OS X, Linux, and Windows, using [electron-packager](https://g
 ## License
 
 MIT © [](https://github.com)
+ 
